@@ -5,6 +5,15 @@ filebeat.inputs:
     - /mnt/log/*.log
     - /mnt/log/*/*.log
 
+filebeat.prospectors:
+- type: log
+  paths:
+   - '/mnt/log/containers/*.log'
+  json.message_key: log
+  json.keys_under_root: true
+  processors:
+  - add_docker_metadata: ~
+
 filebeat.config:
   prospectors:
     path: ${path.config}/prospectors.d/*.yml
