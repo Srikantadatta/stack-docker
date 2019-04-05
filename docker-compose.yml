@@ -126,6 +126,7 @@ services:
     volumes:
       - './scripts/setup-beat.sh:/usr/local/bin/setup-beat.sh:ro'
       - '/var/log:/mnt/log:ro'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
     networks: ['stack']
     depends_on: ['elasticsearch', 'kibana']
     healthcheck:
