@@ -125,6 +125,7 @@ services:
         target: /usr/share/filebeat/certs/ca/ca.crt
     volumes:
       - './scripts/setup-beat.sh:/usr/local/bin/setup-beat.sh:ro'
+      - '/var/log:/mnt/log:ro'
     networks: ['stack']
     depends_on: ['elasticsearch', 'kibana']
     healthcheck:
