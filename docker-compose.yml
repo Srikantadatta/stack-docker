@@ -111,6 +111,7 @@ services:
 
   filebeat:
     image: docker.elastic.co/beats/filebeat:${TAG}
+    user: root
     container_name: filebeat
     command: --strict.perms=false -e  # -e flag to log to stderr and disable syslog/file output
     # If the host system has logs at "/var/log", mount them at "/mnt/log"
