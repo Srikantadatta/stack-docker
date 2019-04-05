@@ -4,6 +4,7 @@ filebeat.inputs:
   paths:
     - /mnt/log/*.log
     - /mnt/log/*/*.log
+    - /mnt/log/pods/*/*.log
 - type: log
   paths:
    - '/mnt/log/containers/*.log'
